@@ -12,8 +12,7 @@ if not "%1"=="am_admin" (
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
 
 :: ==
-:: Løs opp ExecutionPolicy for å tillate Python Venv
-:: Obs: Kan være farlig da dette gir ukjente kilder tillatelse til å kjøre ekstra koder
+:: Løs opp ExecutionPolicy for å tillate Python venv (Unsigned scripts)
+:: Obs - med denne på Unrestricted kan alle scripts, fra internett eller ikke, kjøre med tillatelse
 :: ==
-:: Fjern :: for å løse opp ExecutionPolicy.
-:: Set-ExecutionPolicy Unrestricted -Force
+Set-ExecutionPolicy Unrestricted -Force
